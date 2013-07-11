@@ -5,12 +5,7 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
 	
-	fs.readFileSync('index.html',function (err,data)
-	{
-		if (err) throw err;
-		//response.send(data.toString('utf-8'));
-		response.send("test");
-	});
+	var text = fs.readFileSync('index.html','utf8');
 	response.send("umm");
 });
 
