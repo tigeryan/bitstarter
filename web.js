@@ -14,7 +14,7 @@ app.get('/about.html',function(request, response) {
 });
 app.get('/contact.html',function(request,response) {
 	var text = fs.readFileSync('contact.html','utf8');
-	reponse.send(text);
+	response.send(text);
 });
 
 
