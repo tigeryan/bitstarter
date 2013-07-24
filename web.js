@@ -2,6 +2,7 @@ var express = require('express');
 var fs = require('fs');
 
 var app = express.createServer(express.logger());
+app.use("/styles", express.static(__dirname + '/styles'));
 
 app.get('/', function(request, response) {
 	
@@ -19,10 +20,6 @@ app.get('/contact.html',function(request,response) {
 	response.send(text);
 });
 
-app.get('/css/styles.css',function(request,response) {
-	var text = fs.readFileSync('./css/styles.css','utf8');
-	response.send(text);
-});
 
 
 var port = process.env.PORT || 8080;
