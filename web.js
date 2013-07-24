@@ -1,5 +1,6 @@
 var express = require('express');
 var fs = require('fs');
+var mailer = require('mailer');
 
 var app = express.createServer(express.logger());
 app.use("/css", express.static(__dirname + '/css'));
