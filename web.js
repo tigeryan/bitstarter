@@ -25,6 +25,18 @@ app.get('/contact.html',function(request,response) {
 app.post('/save_contact', function(request,response){
 	var text = fs.readFileSync('contact_save.html','utf8');
 	response.send(text);
+
+	// setup e-mail data with unicode symbols
+	var mailOptions = {
+	    from: "LeagueBuilder <tigeryan55@gmail.com>", // sender address
+	    to: "tigeryan55@gmail.com", // list of receivers
+	    subject: "LeagueBuilder Contact Form", // Subject line
+	    text: "Hello world", // plaintext body
+	    html: "<b>Hello world</b>" // html body
+	}
+	
+	
+	
 });
 
 
