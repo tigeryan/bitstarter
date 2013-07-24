@@ -23,7 +23,8 @@ app.get('/contact.html',function(request,response) {
 });
 
 app.post('/save_contact', function(request,response){
-	
+	var text = fs.readFileSync('contact_save.html','utf8');
+	response.send(text);
 });
 
 
