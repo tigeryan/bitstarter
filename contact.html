@@ -63,9 +63,49 @@
 		<!-- http://placehold.it -->
 		<div class="row-fluid section1">
 			<div class="span12 copy">
-				<p>
-					Contact Form Here
-				</p>
+
+				<form class="form-horizontal" method="post" action="/save_contact">
+				<fieldset>
+
+				<legend>Contact Us</legend>
+				<div class="control-group">
+				<label class="control-label" for="fullname">Your Name</label>
+				<div class="controls">
+				<input id="fullname" name="fullname" type="text" placeholder="First Last" class="input-xlarge" required="">
+				</div>
+				</div>
+				
+				<div class="control-group">
+				<label class="control-label" for="email">Email</label>
+				<div class="controls">
+				<input id="email" name="email" type="text" placeholder="you@domain.com" class="input-xlarge" required="">
+				</div>
+				</div>
+				
+				<div class="control-group">
+				<label class="control-label" for="phone">Phone</label>
+				<div class="controls">
+				<input id="phone" name="phone" type="text" placeholder="555-555-5555" class="input-xlarge">
+				</div>
+				</div>
+				
+				<div class="control-group">
+				<label class="control-label" for="comments">Comments</label>
+				<div class="controls">                     
+				<textarea id="comments" name="comments">Tell us what you think or the best time to contact you for a demo</textarea>
+				</div>
+				</div>
+				
+				<div class="control-group">
+				<label class="control-label" for="send"></label>
+				<div class="controls">
+				<button id="send" name="send" class="btn btn-primary">Submit</button>
+				</div>
+				</div>
+				
+				</fieldset>
+				</form>
+
 			</div>
 		</div>
 	
