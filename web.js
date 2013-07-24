@@ -19,6 +19,12 @@ app.get('/contact.html',function(request,response) {
 	response.send(text);
 });
 
+app.get('/css/styles.css',function(request,response) {
+	var text = fs.readFileSync('./css/styles.css','utf8');
+	response.send(text);
+});
+
+
 var port = process.env.PORT || 8080;
 app.listen(port, function() {
   console.log("Listening on " + port);
