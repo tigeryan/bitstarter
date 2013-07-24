@@ -22,6 +22,9 @@ app.get('/contact.html',function(request,response) {
 	response.send(text);
 });
 
+app.post('/save_contact', function(request,response){
+	
+});
 
 
 var port = process.env.PORT || 8080;
