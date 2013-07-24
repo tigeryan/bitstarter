@@ -2,6 +2,7 @@ var nodemailer = require("nodemailer");
 
 function Mailer(mailOptions) {
 	
+	console.log('Mailer Init');
 	// create reusable transport method (opens pool of SMTP connections)
 	this.smtpTransport = nodemailer.createTransport("SMTP",{
 	    service: "Gmail",
