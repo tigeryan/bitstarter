@@ -2,7 +2,7 @@ var express = require('express');
 var fs = require('fs');
 
 var app = express.createServer(express.logger());
-app.use("/styles", express.static(__dirname + '/styles'));
+app.use("/css", express.static(__dirname + '/css'));
 
 app.get('/', function(request, response) {
 	
