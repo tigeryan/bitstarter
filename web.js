@@ -1,5 +1,6 @@
 var express = require('express');
 var fs = require('fs');
+var mailer = require('./mailer');
 
 var app = express.createServer(express.logger());
 app.use("/css", express.static(__dirname + '/css'));
@@ -28,16 +29,16 @@ app.post('/save_contact', function(request,response){
 
 	// setup e-mail data with unicode symbols
 	var mailOptions = {
-	    from: "LeagueBuilder <tigeryan55@gmail.com>", // sender address
+	    from: "LeagueBuilder <tigeryan55.mode@gmail.com>", // sender address
 	    to: "tigeryan55@gmail.com", // list of receivers
 	    subject: "LeagueBuilder Contact Form", // Subject line
 	    text: "Hello world", // plaintext body
 	    html: "<b>Hello world</b>" // html body
 	}
 	
-	// intantiate class
-	var mailer = new Mailer(mailOptions);	
-	
+	mailer.setOptions(mailOptions);
+	mailer.sendMail();
+	mailer.closeMail();
 	
 });
 

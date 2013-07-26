@@ -1,35 +1,36 @@
 var nodemailer = require("nodemailer");
 
-function Mailer(mailOptions) {
+exports.setOptions = function(mailOptions) {
 	
 	console.log('Mailer Init');
 	// create reusable transport method (opens pool of SMTP connections)
 	this.smtpTransport = nodemailer.createTransport("SMTP",{
 	    service: "Gmail",
-	    auth: {user: "gmail.user@gmail.com", pass: "userpass"}
+	    auth: {user: "tigeryan55.node@gmail.com", pass: "removedforGitHub"}
 	});
 	this.mailOptions = mailOptions;
 	
 }
 
-Mailer.prototype.sendMailer = function () {
+exports.sendMail = function () {
 
-	this.smtpTransport.sendMail(mailOptions, function(error, response) {
+	console.log('Mailer:sendMail');
+	this.smtpTransport.sendMail(this.mailOptions, function(error, response) {
 	    if(error){
 	        console.log(error);
+			return 0;
 	    }else{
 	        console.log("Message sent: " + response.message);
+			return 1;
 	    }
-	
-	    // if you don't want to use this transport object anymore, uncomment following line
-	    //smtpTransport.close(); // shut down the connection pool, no more messages
 	});
 	
 };
 
-Mailer.prototype.closeMailer = function () {
+exports.closeMail = function () {
+	console.log('Mailer:closeMail');
 	this.smtpTransport.close();
 };
 
-module.exports = Mailer;
+//module.exports = Mailer;
 
